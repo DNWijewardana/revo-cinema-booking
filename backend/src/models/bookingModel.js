@@ -25,10 +25,10 @@ const bookingSchema = new Schema(
             enum: ["Mastercard", "Visa", "Paypal"],
             required: true,
         },
-        PaymentStatus: {
+        paymentStatus: {
             type: String,
             enum: ["PENDING", "COMPLETED", "FAILED"],
-            default: "COMPLETED",
+            default: "PENDING",
         }
     },
     { timestamps: true}
