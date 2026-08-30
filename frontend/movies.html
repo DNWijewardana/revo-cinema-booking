@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevoCinema | Movies</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Knewave&family=KoHo:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+
+    <section id="header"> 
+        <nav class="navbar">
+            <h3 class="logo">RevoCinema</h3>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ticketbooking.html">Buy Tickets</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+    </section>
+
+    <!-- Filter Section -->
+
+    <section id="filter-section">
+        <div class="filter-container">
+            <h2>Filter Movies</h2>
+            <form>
+                <div class="filter-group">
+                    <label for="language">Language:</label>
+                    <select id="language">
+                        <option value="all">All</option>
+                        <option value="english">English</option>
+                        <option value="sinhala">Sinhala</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="tamil">Tamil</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="genre">Genre:</label>
+                    <select id="genre">
+                        <option value="all">All</option>
+                        <option value="action">Action</option>
+                        <option value="comedy">Comedy</option>
+                        <option value="drama">Drama</option>
+                        <option value="horror">Horror</option>
+                        <option value="scifi">Sci-Fi</option>
+                        <option value="mystery">Mystery</option>
+                        <option value="romance">Romance</option>
+                        <option value="thriller">Thriller</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="release-date">Release Date:</label>
+                    <select id="release-date">
+                        <option value="all">All</option>
+                        <option value="now-showing">Now Showing</option>
+                        <option value="coming-soon">Coming Soon</option>
+                        <option value="last-month">Released Last Month</option>
+                    </select>
+                </div>
+                <button type="submit" class="filter-btn">Apply Filters</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Now Showing Movies -->
+
+    <section id="now-showing-mov">
+        <h2>----- Now Showing -----</h2>
+        <div class="movie-list">
+            <div class="movie-ad">
+                <img src="images/Movies3.jpg" alt="">
+                <h3>Kraven the Hunter</h3>
+                <a href="">Buy Tickets</a>
+            </div>
+            <div class="movie-ad">
+                <img src="images/Movies14.jpg" alt="">
+                <h3>Amaran</h3>
+                <a href="">Buy Tickets</a>
+            </div>
+            <div class="movie-ad">
+                <img src="images/Movies6.jpg" alt="">
+                <h3>Godzilla x Kong</h3>
+                <a href="">Buy Tickets</a>
+            </div>
+            <div class="movie-ad">
+                <img src="images/Movies13.jpg" alt="">
+                <h3>Sihina Nelum Mal</h3>
+                <a href="">Buy Tickets</a>
+            </div>
+            <div class="movie-ad">
+                <img src="images/Movies7.jpg" alt="">
+                <h3>The Beekeeper</h3>
+                <a href="">Buy Tickets</a>
+            </div>
+            <div class="movie-ad">
+                <img src="images/Movies5.jpg" alt="">
+                <h3>Smile 2</h3>
+                <a href="">Buy Tickets</a>
+            </div>
+            <div class="movie-ad">
+                <img src="images/Movies4.jpg" alt="">
+                <h3>Heretic</h3>
+                <a href="">Buy Tickets</a>
+            </div>
+            <div class="movie-ad">
+                <img src="images/Movies1.jpg" alt="">
+                <h3>How to Train Your Dragon</h3>
+                <a href="">Buy Tickets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Movies -->
+
+    <section id="upcoming-movies-mov">
+        <h2>----- Upcoming Movies -----</h2>
+        <div class="movie-list">
+            <div class="movie-ad">
+                <img src="images/Movies10.jpg" alt="">
+                <h3>Kanguva</h3>
+                <a href="">Buy Tickets</a>
+            </div>
+            <div class="movie-ad">
+                <img src="images/Movies9.jpg" alt="">
+                <h3>Kambili</h3>
+                <a href="">Buy Tickets</a>
+            </div>
+            <div class="movie-ad">
+                <img src="images/Movies12.jpg" alt="">
+                <h3>Never Let Go</h3>
+                <a href="">Buy Tickets</a>
+            </div>
+            <div class="movie-ad">
+                <img src="images/Movies15.jpg" alt="">
+                <h3>Gardian of the Galaxy</h3>
+                <a href="">Buy Tickets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+     
+    <section id="footer">
+        <div class="footer-con">
+            <div class="footer-col">
+                <h3 class="foo-logo">RevoCinema</h3>
+                <p>Your gateway to a world of cinematic experiences. Immerse yourself in luxury and entertainment.</p>
+                <div class="foo-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.jsp">Home</a></li>
+                    <li><a href="movies.jsp">Movies</a></li>
+                    <li><a href="ticketbooking.html">Buy Tickets</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-info">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> No 12, Main Street, Galle</li>
+                    <li><i class="fas fa-phone-alt"></i> +94 91 235 4326</li>
+                    <li><i class="fas fa-envelope"></i> support@revocinema.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RevoCinema. All Rights Reserved. | Designed by Dimalka Navod</p>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevoCinema | Book Ticket</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="js/script.js" defer></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Knewave&family=KoHo:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+
+    <section id="header"> 
+            <nav class="navbar">
+                <h3 class="logo">RevoCinema</h3>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="">Buy Tickets</a></li>
+                        <li><a href="movies.html">Movies</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <a href="login.html" class="login-btn">Login</a>
+            </nav>
+    </section>
+
+    <!-- Hero Section -->
+
+    <div id="tickets-booking">
+        <!-- Step 1: Pick A Movie -->
+        <div class="step step-1 active">
+            <div class="movie-container">
+                <h1>Pick a Movie</h1>
+                <div class="movie-selector">
+                    <label for="movie">Select a Movie:</label>
+                    <select id="movie">
+                        <option value="" disabled selected>Select a movie</option>
+                        <option value="movie1">How to Train Your Dragon</option>
+                        <option value="movie2">Heretic</option>
+                        <option value="movie3">Kraven the Hunter</option>
+                        <option value="movie4">Smile 2</option>
+                        <option value="movie5">Godzilla x Kong</option>
+                        <option value="movie6">The Beekeeper</option>
+                        <option value="movie7">Sihina Nelum Mal</option>
+                        <option value="movie8">Amaran</option>
+                    </select>
+                </div>
+                <div class="movie-details">
+                    <div class="movie-poster">
+                        <img id="poster" src="images/movieposter.jpg" alt="Movie Poster">
+                    </div>
+                    <div class="movie-info">
+                        <h2 id="movie-name">Movie Name</h2>
+                        <p id="movie-details">Movie details will appear here...</p>
+                        <p><strong>Genre:</strong> <span id="genre">N/A</span></p>
+                        <p><strong>Rating:</strong> <span id="rating">N/A</span></p>
+                        <button type="button" class="next-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Seat Selection -->
+        <div class="tickets">
+            <div class="step step-2">
+                <div class="ticket-selector">
+                    <div class="title">
+                        12th Fail
+                    </div>
+                    <div class="seats">
+                        <div class="seat-status">
+                            <div class="status-itm">Available</div>
+                            <div class="status-itm">Booked</div>
+                            <div class="status-itm">Selected</div>
+                        </div>
+                        <div class="all-seats">
+                            <input type="checkbox" name="tickets" id="s1">
+                            <label for="s1" class="seat booked"></label>
+                        </div>
+                    </div>
+                    <div class="screentext">All Eyes Here Please</div>
+                    <div class="timings">
+                        <div class="dates">
+                            <input type="radio" name="date" id="d1" checked>
+                            <label for="d1" class="dates-item">
+                                <div class="day">Fri</div>
+                                <div class="date">12</div>
+                            </label>
+                            <input type="radio" name="date" id="d2">
+                            <label for="d2" class="dates-item">
+                                <div class="day">Sat</div>
+                                <div class="date">13</div>
+                            </label>
+                            <input type="radio" name="date" id="d3">
+                            <label for="d3" class="dates-item">
+                                <div class="day">Sun</div>
+                                <div class="date">14</div>
+                            </label>
+                            <input type="radio" name="date" id="d4">
+                            <label for="d4" class="dates-item">
+                                <div class="day">Mon</div>
+                                <div class="date">15</div>
+                            </label>
+                            <input type="radio" name="date" id="d5">
+                            <label for="d5" class="dates-item">
+                                <div class="day">Tue</div>
+                                <div class="date">16</div>
+                            </label>
+                            <input type="radio" name="date" id="d6">
+                            <label for="d6" class="dates-item">
+                                <div class="day">Wed</div>
+                                <div class="date">17</div>
+                            </label>
+                            <input type="radio" name="date" id="d7">
+                            <label for="d7" class="dates-item">
+                                <div class="day">Thu</div>
+                                <div class="date">18</div>
+                            </label>
+                        </div>
+                        <div class="times">
+                            <input type="radio" name="time" id="t1" checked>
+                            <label for="t1" class="time">11:00 am</label>
+                            <input type="radio" name="time" id="t2">
+                            <label for="t2" class="time">1:30 pm</label>
+                            <input type="radio" name="time" id="t3">
+                            <label for="t3" class="time">4.30 pm</label>
+                            <input type="radio" name="time" id="t4">
+                            <label for="t4" class="time">7.30 pm</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="ticket-price">
+                    <div class="total-tickets">
+                        <span><span class="count">0</span> Tickets</span>
+                        <div>LKR <div class="amount">0</div>
+                        </div>
+                    </div>
+                    <button type="button" class="prev-btn">Back</button>
+                    <button type="button" class="next-btn">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Customer Details and Payment Selection -->
+        <div class="payment-details">
+          <div class="step step-4">
+            <form action="">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="title">billing address</h3>
+                        <div class="inputBox">
+                            <span>full name :</span>
+                            <input type="text" placeholder="john deo">
+                        </div>
+                        <div class="inputBox">
+                            <span>email :</span>
+                            <input type="email" placeholder="example@example.com">
+                        </div>
+                        <div class="inputBox">
+                            <span>address :</span>
+                            <input type="text" placeholder="room - street - locality">
+                        </div>
+                        <div class="inputBox">
+                            <span>city :</span>
+                            <input type="text" placeholder="mumbai">
+                        </div>
+                        <div class="flex">
+                            <div class="inputBox">
+                                <span>state :</span>
+                                <input type="text" placeholder="india">
+                            </div>
+                            <div class="inputBox">
+                                <span>zip code :</span>
+                                <input type="text" placeholder="123 456">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h3 class="title">payment</h3>
+                        <div class="inputBox">
+                            <span>cards accepted :</span>
+                            <img src="images/card_img.png" alt="">
+                        </div>
+                        <div class="inputBox">
+                            <span>name on card :</span>
+                            <input type="text" placeholder="mr. john deo">
+                        </div>
+                        <div class="inputBox">
+                            <span>credit card number :</span>
+                            <input type="number" placeholder="1111-2222-3333-4444">
+                        </div>
+                        <div class="inputBox">
+                            <span>exp month :</span>
+                            <input type="text" placeholder="january">
+                        </div>
+                        <div class="flex">
+                            <div class="inputBox">
+                                <span>exp year :</span>
+                                <input type="number" placeholder="2022">
+                            </div>
+                            <div class="inputBox">
+                                <span>CVV :</span>
+                                <input type="text" placeholder="1234">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="proceed to checkout" class="submit-btn">
+            </form>
+          </div>
+        </div> 
+
+        <!-- Step 4: Payment Details -->
+        <div class="step step-4">
+            <div class="payment-details">
+                <h3>Enter Payment Details</h3>
+                <div class="payment-info"></div>
+            </div>
+            <div class="buttons">
+                <button type="button" class="prev-btn">Back</button>
+                <button type="button" class="submit-btn">Confirm Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+     
+    <section id="footer">
+        <div class="footer-con">
+            <div class="footer-col">
+                <h3 class="foo-logo">RevoCinema</h3>
+                <p>Your gateway to a world of cinematic experiences. Immerse yourself in luxury and entertainment.</p>
+                <div class="foo-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="#">Buy Tickets</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-info">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> No 12, Main Street, Galle</li>
+                    <li><i class="fas fa-phone-alt"></i> +94 91 235 4326</li>
+                    <li><i class="fas fa-envelope"></i> support@revocinema.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RevoCinema. All Rights Reserved. | Designed by Dimalka Navod</p>
+        </div>
+    </section>
+
+      
+</body>
+</html>
+
