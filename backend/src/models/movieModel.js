@@ -29,7 +29,7 @@ const movieSchema = new Schema(
         },
         releaseDate: {
             type: Date,
-            required: true,
+            required: false,
         },
         nowShowing: {
             type: Boolean,

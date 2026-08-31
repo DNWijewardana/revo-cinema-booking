@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
+import movieRouter from './routes/movieRoutes.js';
+import authRouter from './routes/authRoutes.js';
+
 const app = express();
 
 // Middleware configuration
@@ -17,6 +20,11 @@ app.use(cookieParser());
 // Base route for health check
 app.get('/api/health', (req, res) => {
     res.status(200).json({ status: "Success", message: "Server is running smoothly!" })
-})
+});
+
+// Api Routes
+app.use("/api/v1/movies", movieRouter);
+app.use("/api/v1/auth", authRouter);
 
 export { app };
+
