@@ -36,7 +36,7 @@ export const createBooking = async (req, res) => {
         user: req.user._id,
         movie: movieId,
         seats,
-        totalAmount,
+        totalPrice,
         paymentMethod
     });
 
