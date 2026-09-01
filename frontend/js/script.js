@@ -64,7 +64,6 @@ tickets.forEach((ticket) => {
     })
 })
 
-// ===============
 
     // Payment Method Selection
     const paymentRadios = document.querySelectorAll('input[name="payment"]');
@@ -87,7 +86,6 @@ tickets.forEach((ticket) => {
 });
 
 
-/////////////////////////////
 
 // Movie data
 const movies = {
