@@ -43,3 +43,13 @@ export const createBooking = async (req, res) => {
     res.status(201).json({ success: true, message: "Tickets booked successfully!", data: newBooking });
 };
 
+// Get all bookings for the currently logged-in user
+export const getMyBookings = async (req, res) => {
+    // req.user was attached by verifyJWT - this is the ONLY trusted user id
+    const bookings = await Booking.find({ user: req.user._id })
+    .populate("movie", "title posterURL language") // Join with movie details 
+    .sort({ createdAt: -1 }); // Newest first
+
+    res.status(200).json({ success: true, count: bookings.length, data: bookings });
+};
+
