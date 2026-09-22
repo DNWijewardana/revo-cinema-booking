@@ -54,3 +54,22 @@ export const loginUser = async (req, res) => {
     });
 }
 
+// get the current logged-in user
+export const getCurrentUser = async (req, res) => {
+    // verifyJWT middleware already attached to the user to req.user
+    res.status(200).json({ success: true, data: req.user });
+};
+
+// Log the user out (clear the cookies)
+export const LogoutUser = async (req, res) => {
+    const cookieOptions = {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "strict",
+    };
+
+    res.status(200)
+        .clearCookie("accessToken", cookieOptions)
+        .json({ success: true, message: "Logged out successfully" });
+};
+
