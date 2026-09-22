@@ -61,7 +61,7 @@ export const getCurrentUser = async (req, res) => {
 };
 
 // Log the user out (clear the cookies)
-export const LogoutUser = async (req, res) => {
+export const logoutUser = async (req, res) => {
     const cookieOptions = {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
