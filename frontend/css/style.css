@@ -1499,3 +1499,39 @@ select{
     .auth-head h2{ font-size: 1.6rem; }
     .auth-form-side{ padding: 1.5rem 1rem; }
 }
+
+/* Booking — payment / confirmation step */
+.booking-summary{
+    background: var(--glass-color);
+    border: 1px solid rgba(118,199,192,0.25);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    line-height: 2;
+}
+.booking-summary span{ color: var(--highlight-color); font-weight: 600; }
+
+.payment-field{ margin-bottom: 1rem; }
+.payment-field label{ display:block; margin-bottom:.5rem; font-weight:600; }
+.payment-field select{
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: var(--primary-bg);
+    color: var(--primary-text);
+    min-width: 220px;
+}
+
+.confirm-btn{
+    background: var(--highlight-color);
+    color: var(--primary-bg);
+    font-weight: 700;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.confirm-btn:hover{ background: var(--primary-text); }
+.confirm-btn:disabled{ opacity:.6; cursor:not-allowed; }
+
