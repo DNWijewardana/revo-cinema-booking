@@ -28,3 +28,14 @@ export const addMovie = async (req,res) => {
     });
 };
 
+// Delete a movie by id
+export const deleteMovie = async (req, res) => {
+    const movie = await Movie.findByIdAndDelete(req.params.id);
+
+    if (!movie) {
+        return res.status(404).json({ success: false, message: "Movie not found" });
+    }
+
+    res.status(200).json({ success: true, message: "Movie deleted successfully" });
+};
+
