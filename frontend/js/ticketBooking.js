@@ -1,46 +1,46 @@
-const API_URL = "http://localhost:3000/api/v1"; // Update this backend URL later when deploying to production
+const API_URL = "http://localhost:5000/api/v1"; // Update this backend URL when deploying to production
 const SEAT_PRICE = 800; // LKR per seat
-const TOTAL_SEATS = 80; 
+const TOTAL_SEATS = 80;
 
 // State
-let dbMobies = []; // Movies loaded from the database
-let letSelectedMovie = null; // The movie selected by the user
+let dbMovies = []; // Movies loaded from the database
+let selectedMovie = null; // The movie selected by the user
 let bookedSeats = []; // Already booked seats for the selected movie
 let selectedSeats = []; // Seat ids the user is choosing now
 
-
 document.addEventListener("DOMContentLoaded", () => {
-    // Dom references
-    const movieSelect = document.getElementbyId("movie");
-    const poster = document.getElementbyId("poster");
-    const movieName = document.getElementbyId("movie-name");
-    const MovieDetails = document.getElementbyId("movie-details");
-    const genereE1 = document.getElementById("genere");
-    const ratingE1 = document.getElementById("rating");
-    
-    const seatsContainer = document.quearySelector(".all-seats");
-    const selectMovieTitle = document.getElementbyId("seat-movie-title");
-    const countE1 = document.querySelector(".count");
-    const amountE1 = document.querySelector(".amount");
+    // DOM references
+    const movieSelect = document.getElementById("movie");
+    const poster = document.getElementById("poster");
+    const movieName = document.getElementById("movie-name");
+    const movieDetails = document.getElementById("movie-details");
+    const genreEl = document.getElementById("genre");
+    const ratingEl = document.getElementById("rating");
+
+    const seatContainer = document.querySelector(".all-seats");
+    const seatMovieTitle = document.getElementById("seat-movie-title");
+    const countEl = document.querySelector(".count");
+    const amountEl = document.querySelector(".amount");
 
     const steps = document.querySelectorAll(".step");
-    const nextButtons = document.quarySelectorAll(".next-btn");
-    const prevButtons = document.quarySelectorAll("prev-btn");
-    const confirmBtn = document.quearySelector("confirm-btn");
+    const nextButtons = document.querySelectorAll(".next-btn");
+    const prevButtons = document.querySelectorAll(".prev-btn");
+    const confirmBtn = document.querySelector(".confirm-btn");
     let currentStep = 1;
 
-    // Step Navigation
+    // Step navigation
     function goToStep(step) {
-        steps[currentStep - 1].classList.remote("active");
+        steps[currentStep - 1].classList.remove("active");
         currentStep = step;
         steps[currentStep - 1].classList.add("active");
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     nextButtons.forEach((button) => {
         button.addEventListener("click", async () => {
             if (currentStep === 1) {
                 if (!selectedMovie) return alert("Please select a movie first.");
-                await loadSeats();            // fetch taken seats before showing the map
+                await loadSeats(); // fetch taken seats before showing the map
             }
             if (currentStep === 2) {
                 if (selectedSeats.length === 0) return alert("Please select at least one seat.");
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("summary-total").textContent = selectedSeats.length * SEAT_PRICE;
     }
 
-    // Confirm booking (protected) 
+    // Confirm booking (protected)
     if (confirmBtn) {
         confirmBtn.addEventListener("click", async () => {
             const messageEl = document.getElementById("bookingMessage");
@@ -166,11 +166,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         movieId: selectedMovie._id,
                         seats: selectedSeats,
                         totalPrice: selectedSeats.length * SEAT_PRICE,
-                        paymentMethod
-                    })
+                        paymentMethod,
+                    }),
                 });
 
-                // Not logged in, bounce to login
+                // Not logged in → bounce to login
                 if (res.status === 401) {
                     messageEl.className = "auth-message error";
                     messageEl.textContent = "Please log in to complete your booking. Redirecting...";

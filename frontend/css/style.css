@@ -55,6 +55,10 @@ body{
     text-align: right;
 }
 
+.navbar ul{
+    margin-right: 50px;
+}
+
 .navbar ul li{
     list-style: none;
     display: inline-block;
@@ -96,7 +100,6 @@ body{
     font-size: 16px;
     border-radius: 5px;
     font-weight: bold;
-    margin-left: 50px;
     transition: 0.3s;
 }
 
@@ -890,11 +893,20 @@ h1{
 }
 
 select{
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(118, 199, 192, 0.4);
+    background: var(--primary-bg);
+    color: var(--primary-text);
     font-size: 1rem;
+    font-family: inherit;
     margin-left: 10px;
+    cursor: pointer;
+}
+
+select:focus-visible{
+    outline: 3px solid rgba(118, 199, 192, 0.45);
+    outline-offset: 2px;
 }
 
 .movie-details{
@@ -928,23 +940,9 @@ select{
     font-size: 18px;
 }
 
+/* The Next button here is styled by the unified .next-btn rules (see bottom of file) */
 .movie-info button{
-    font-size: 18px;
-    text-decoration: none;
-    color: var(--primary-text);
-    border: 1px solid var(--highlight-color);
-    padding: 6px 14px;
-    background-color: var(--button-color);
-    border-radius: 4px;
-    font-weight: bold;
-    display: inline-block;
-    text-align: center;
     margin-top: 10px;
-}
-
-.movie-info button:hover{
-    color: var(--button-color);
-    background: var(--highlight-color);
 }
 
 
@@ -1150,15 +1148,10 @@ select{
     font-weight: 400;
 }
 
-.ticket-price button{
-    background: rgb(60, 60, 60);
-    color: white;
-    font-size: 14px;
-    padding: 7px 14px;
-    border-radius: 2px;
-    outline: none;
-    border: none;
-    cursor: pointer;
+/* Buttons inside the counter row are styled by the unified .next-btn/.prev-btn rules (bottom of file) */
+.step-actions{
+    display: flex;
+    gap: 1rem;
 }
 
 /* ============================================================
@@ -1765,4 +1758,89 @@ table td{ color: var(--secondary-text); }
 @media (max-width: 768px){
     #admin{ padding: 0 1.25rem; }
     .admin-form{ grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   UNIFIED ACTION BUTTONS  (booking / payment / step flow)
+   One consistent style for Next / Back / Confirm across pages.
+   ============================================================ */
+
+.next-btn,
+.prev-btn,
+.confirm-btn{
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: 2px solid var(--highlight-color);
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    line-height: 1;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Primary actions — Next / Confirm (filled teal) */
+.next-btn,
+.confirm-btn{
+    background: var(--highlight-color);
+    color: var(--primary-bg);
+}
+.next-btn:hover,
+.confirm-btn:hover{
+    background: var(--primary-text);
+    border-color: var(--primary-text);
+    color: var(--button-color);
+}
+
+/* Secondary action — Back (outline teal) */
+.prev-btn{
+    background: transparent;
+    color: var(--highlight-color);
+}
+.prev-btn:hover{
+    background: var(--highlight-color);
+    color: var(--primary-bg);
+}
+
+/* Shared disabled + focus states */
+.next-btn:disabled,
+.prev-btn:disabled,
+.confirm-btn:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.next-btn:focus-visible,
+.prev-btn:focus-visible,
+.confirm-btn:focus-visible{
+    outline: 3px solid rgba(118, 199, 192, 0.5);
+    outline-offset: 2px;
+}
+
+/* Payment step button row (Back + Confirm aligned & spaced) */
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Consistent focus ring for text inputs / textareas across forms */
+input:focus-visible,
+textarea:focus-visible{
+    outline: 3px solid rgba(118, 199, 192, 0.4);
+    outline-offset: 1px;
+}
+
+@media (max-width: 480px){
+    .buttons{ flex-direction: column-reverse; }
+    .buttons .next-btn,
+    .buttons .prev-btn,
+    .buttons .confirm-btn{ width: 100%; }
 }

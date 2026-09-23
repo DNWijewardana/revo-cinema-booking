@@ -43,8 +43,8 @@ function renderAuthArea(user) {
                 <i class="fas fa-chevron-down"></i>
             </button>
             <div class="user-dropdown" id="userDropdown">
-                <a href="mybookings.html"><i class="fas fa-ticket-alt"></i> My Bookings</a>
-                ${isAdmin ? `<a href="admin-dashboard.html"><i class="fas fa-cog"></i> Admin Panel</a>` : ""}
+                <a href="myBookings.html"><i class="fas fa-ticket-alt"></i> My Bookings</a>
+                ${isAdmin ? `<a href="adminDashboard.html"><i class="fas fa-cog"></i> Admin Panel</a>` : ""}
                 <button type="button" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
             </div>
         </div>
