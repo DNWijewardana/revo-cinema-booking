@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 import movieRouter from './routes/movieRoutes.js';
 import authRouter from './routes/authRoutes.js';
@@ -49,8 +51,13 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/bookings", bookingRouter);
 app.use("/api/v1/admin", adminRouter);
 
-// 404 fallback for any unmatched API route (returns JSON, not HTML)
-app.use((req, res) => {
+// Serve the frontend from the same origin as the API.
+const __dirname = path.dirname(fileURLToPath(import.meta.url)); // backend/src
+const frontendDir = path.join(__dirname, "../../frontend");
+app.use(express.static(frontendDir));
+
+// JSON 404 for unmatched API calls (page 404s also land here)
+app.use("/api", (req, res) => {
     res.status(404).json({ success: false, message: `Route not found: ${req.method} ${req.originalUrl}` });
 });
 
