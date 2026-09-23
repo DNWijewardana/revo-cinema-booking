@@ -8,7 +8,7 @@ const router = Router();
 router.route("/seats/:movieId").get(getAllBookings);
 
 // Logged in users can view their own bookings
-router.route("/myBookings").get(verifyJWT, getMyBookings);
+router.route("/my").get(verifyJWT, getMyBookings);
 
 // But only logged in users can book tickets
 router.route("/").post(verifyJWT, createBooking);

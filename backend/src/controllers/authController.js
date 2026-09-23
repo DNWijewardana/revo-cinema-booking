@@ -10,11 +10,10 @@ export const registerUser = async (req, res) => {
         return res.status(400).json({ success: false, message: "User already exists" });
     }
 
-    // Create a new user
+    // Create a new user (User.create already saves it to the database)
     const user = await User.create({ name, email, password });
-    await user.save();
 
-    // Remove password from response for secuirity
+    // Remove password from response for security
     const createdUser = await User.findById(user._id).select("-password");
     res.status(201).json({ success: true, message: "User registered successfully", data: createdUser });
 }   
@@ -26,7 +25,7 @@ export const loginUser = async (req, res) => {
     // Check if user exits by email
     const user = await User.findOne({ email });
     if (!user) {
-        return res.status(400).json({ stccess: false, message: "User does not exist, please register first" });
+        return res.status(400).json({ success: false, message: "User does not exist, please register first" });
     }
 
     // Check if password is correct
