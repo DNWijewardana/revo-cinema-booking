@@ -1535,3 +1535,165 @@ select{
 .confirm-btn:hover{ background: var(--primary-text); }
 .confirm-btn:disabled{ opacity:.6; cursor:not-allowed; }
 
+/* Navbar user menu (logged-in state) */
+.user-menu{ position: relative; }
+
+.user-chip{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--button-color);
+    color: var(--primary-text);
+    border: 2px solid var(--highlight-color);
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.user-chip:hover{ background: var(--highlight-color); color: var(--primary-bg); }
+.user-chip .fa-user-circle{ font-size: 1.1rem; }
+
+.user-dropdown{
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    min-width: 200px;
+    background: #10214a;
+    border: 1px solid rgba(118,199,192,0.3);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: 0.25s;
+    z-index: 1200;
+}
+.user-dropdown.open{ opacity: 1; visibility: visible; transform: translateY(0); }
+
+.user-dropdown a,
+.user-dropdown button{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+    color: var(--secondary-text);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.user-dropdown a:hover,
+.user-dropdown button:hover{ background: rgba(118,199,192,0.12); color: var(--highlight-color); }
+.user-dropdown i{ color: var(--highlight-color); width: 18px; text-align: center; }
+
+/* ====== MY BOOKINGS PAGE ====== */
+#my-bookings{
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+    padding: 0 5rem;
+}
+.mb-heading{ text-align: center; margin-bottom: 2.5rem; }
+.mb-heading h1{ font-size: 2.6rem; text-transform: uppercase; color: var(--highlight-color); margin-bottom: 0.4rem; }
+.mb-heading p{ color: var(--secondary-text); }
+
+.bookings-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.75rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.mb-loading{ grid-column: 1 / -1; text-align: center; color: var(--secondary-text); padding: 3rem 0; font-size: 1.1rem; }
+
+.booking-card-item{
+    display: flex;
+    background: var(--glass-color);
+    border: 1px solid rgba(118,199,192,0.2);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px -15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+.booking-card-item:hover{ transform: translateY(-5px); }
+.bc-poster{ flex: 0 0 120px; }
+.bc-poster img{ width: 120px; height: 100%; object-fit: cover; }
+.bc-body{ flex: 1; padding: 1.25rem; }
+.bc-body h3{ color: var(--highlight-color); font-size: 1.25rem; margin-bottom: 0.5rem; }
+.bc-meta{ font-size: 0.9rem; color: var(--secondary-text); margin: 0.35rem 0; }
+.bc-meta i{ color: var(--highlight-color); width: 18px; }
+.bc-meta strong{ color: var(--primary-text); }
+
+.bc-footer{ display: flex; align-items: center; justify-content: space-between; margin: 0.9rem 0; }
+.bc-total{ font-size: 1.15rem; font-weight: 700; color: var(--highlight-color); }
+
+.status-pill{ font-size: 0.72rem; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.5px; }
+.status-pill.completed{ background: rgba(118,199,192,0.15); color: var(--highlight-color); border: 1px solid rgba(118,199,192,0.4); }
+.status-pill.pending{ background: rgba(255,215,0,0.12); color: #ffd700; border: 1px solid rgba(255,215,0,0.4); }
+.status-pill.failed{ background: rgba(255,77,79,0.15); color: #ffb3b3; border: 1px solid rgba(255,77,79,0.4); }
+
+.bc-view{ width: 100%; margin-top: 0.4rem; }
+
+/* Empty / error state */
+.mb-empty{ grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--secondary-text); }
+.mb-empty i{ font-size: 3rem; color: var(--highlight-color); margin-bottom: 1rem; }
+.mb-empty h3{ color: var(--primary-text); margin-bottom: 0.5rem; font-size: 1.5rem; }
+.mb-empty .next-btn{ display: inline-block; margin-top: 1.25rem; text-decoration: none; }
+
+/* ============ E-TICKET MODAL ============ */
+.ticket-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(2,0,36,0.8);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    z-index: 2000;
+    padding: 1.5rem;
+}
+.ticket-overlay.open{ display: flex; }
+
+.eticket{
+    width: 100%;
+    max-width: 420px;
+    background: linear-gradient(160deg, #10214a, #1E3A5F);
+    border: 1px solid rgba(118,199,192,0.35);
+    border-radius: 18px;
+    padding: 1.75rem;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    position: relative;
+}
+.et-top{ display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed rgba(255,255,255,0.25); padding-bottom: 1rem; margin-bottom: 1rem; }
+.et-brand{ font-family: "Knewave", cursive; color: var(--icon-color); font-size: 1.5rem; }
+.et-tag{ font-size: 0.75rem; letter-spacing: 2px; color: var(--highlight-color); border: 1px solid var(--highlight-color); padding: 3px 10px; border-radius: 20px; }
+.et-movie{ font-size: 1.6rem; font-weight: 700; color: var(--primary-text); margin-bottom: 1.25rem; }
+.et-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; margin-bottom: 1.5rem; }
+.et-grid span{ display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--secondary-text); }
+.et-grid strong{ font-size: 1rem; color: var(--primary-text); }
+.et-barcode{ height: 56px; border-radius: 6px; background: repeating-linear-gradient(90deg, #fff 0 3px, #10214a 3px 6px); margin-bottom: 0.75rem; }
+.et-id{ font-size: 0.72rem; color: var(--secondary-text); text-align: center; letter-spacing: 1px; }
+.ticket-actions{ display: flex; gap: 1rem; }
+
+/* Print only the ticket */
+@media print{
+    body * { visibility: hidden; }
+    #ticketModal, #ticketModal * { visibility: visible; }
+    #ticketModal{ position: absolute; inset: 0; background: #fff; display: block; }
+    .no-print{ display: none !important; }
+    .eticket{ box-shadow: none; margin: 2rem auto; }
+}
+
+@media (max-width: 768px){
+    #my-bookings{ padding: 0 1.25rem; }
+    .bookings-grid{ grid-template-columns: 1fr; }
+}

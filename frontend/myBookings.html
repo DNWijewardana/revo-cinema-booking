@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RevoCinema | My Bookings</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&family=KoHo:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="js/session.js" defer></script>
+    <script src="js/mybookings.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <section id="header">
+        <nav class="navbar">
+            <h3 class="logo">RevoCinema</h3>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ticketbooking.html">Buy Tickets</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div id="authArea">
+                <a href="login.html" class="login-btn">Login</a>
+            </div>
+        </nav>
+    </section>
+
+    <!-- My Bookings -->
+    <section id="my-bookings">
+        <div class="mb-heading">
+            <h1>My Bookings</h1>
+            <p>Every ticket you've booked with RevoCinema, all in one place.</p>
+        </div>
+
+        <!-- JS fills this in -->
+        <div id="bookingsContainer" class="bookings-grid">
+            <div class="mb-loading"><i class="fas fa-spinner fa-spin"></i> Loading your tickets...</div>
+        </div>
+    </section>
+
+    <!-- E-Ticket Modal (hidden until a ticket is opened) -->
+    <div id="ticketModal" class="ticket-overlay">
+        <div class="eticket" id="eticket">
+            <!-- JS renders the ticket here -->
+        </div>
+        <div class="ticket-actions no-print">
+            <button type="button" class="prev-btn" id="closeTicket">Close</button>
+            <button type="button" class="next-btn" id="printTicket"><i class="fas fa-print"></i> Print / Save PDF</button>
+        </div>
+    </div>
+</body>
+</html>
