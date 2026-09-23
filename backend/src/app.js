@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import movieRouter from './routes/movieRoutes.js';
 import authRouter from './routes/authRoutes.js';
 import bookingRouter from "./routes/bookingRoutes.js";
+import adminRouter from "./routes/adminRoutes.js";
 
 const app = express();
 
@@ -27,6 +28,9 @@ app.get('/api/health', (req, res) => {
 app.use("/api/v1/movies", movieRouter);
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/bookings", bookingRouter);
+app.use("/api/v1/admin", adminRouter);
 
 export { app };
+
+
 

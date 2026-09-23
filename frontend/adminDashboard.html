@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RevoCinema | Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&family=KoHo:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="js/session.js" defer></script>
+    <script src="js/admin.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <section id="header">
+        <nav class="navbar">
+            <h3 class="logo">RevoCinema</h3>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ticketbooking.html">Buy Tickets</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div id="authArea">
+                <a href="login.html" class="login-btn">Login</a>
+            </div>
+        </nav>
+    </section>
+
+    <section id="admin">
+        <div class="admin-heading">
+            <h1>Admin Dashboard</h1>
+            <p>Manage movies, users, and bookings across RevoCinema.</p>
+        </div>
+
+        <!-- Stat cards -->
+        <div class="stat-grid" id="statGrid">
+            <div class="stat-card"><i class="fas fa-film"></i><div><span id="statMovies">—</span><small>Movies</small></div></div>
+            <div class="stat-card"><i class="fas fa-users"></i><div><span id="statUsers">—</span><small>Users</small></div></div>
+            <div class="stat-card"><i class="fas fa-ticket-alt"></i><div><span id="statBookings">—</span><small>Bookings</small></div></div>
+            <div class="stat-card"><i class="fas fa-coins"></i><div><span id="statRevenue">—</span><small>Revenue (LKR)</small></div></div>
+        </div>
+
+        <!-- Add movie -->
+        <div class="admin-panel">
+            <h2><i class="fas fa-plus-circle"></i> Add a Movie</h2>
+            <form id="addMovieForm" class="admin-form">
+                <input type="text" id="am-title" placeholder="Title" required />
+                <input type="text" id="am-poster" placeholder="Poster URL (e.g. images/Movies3.jpg)" required />
+                <input type="text" id="am-language" placeholder="Language" required />
+                <input type="text" id="am-rating" placeholder="Rating (e.g. 8.5/10)" required />
+                <input type="text" id="am-genre" placeholder="Genre (comma separated: Action, Thriller)" required />
+                <input type="date" id="am-release" required />
+                <textarea id="am-description" placeholder="Description" required></textarea>
+                <label class="am-check"><input type="checkbox" id="am-nowshowing" checked /> Now Showing</label>
+                <button type="submit" class="next-btn">Add Movie</button>
+                <div class="auth-message" id="addMovieMsg" role="alert"></div>
+            </form>
+        </div>
+
+        <!-- Movies table -->
+        <div class="admin-panel">
+            <h2><i class="fas fa-film"></i> Movies</h2>
+            <div class="table-wrap"><table id="moviesTable"><tbody></tbody></table></div>
+        </div>
+
+        <!-- Users table -->
+        <div class="admin-panel">
+            <h2><i class="fas fa-users"></i> Users</h2>
+            <div class="table-wrap"><table id="usersTable"><tbody></tbody></table></div>
+        </div>
+
+        <!-- Bookings table -->
+        <div class="admin-panel">
+            <h2><i class="fas fa-ticket-alt"></i> Bookings</h2>
+            <div class="table-wrap"><table id="bookingsTable"><tbody></tbody></table></div>
+        </div>
+    </section>
+</body>
+</html>

@@ -26,3 +26,15 @@ export const verifyJWT = async (req, res, next) => {
     }
 };
 
+// Allow the request throung only if the user is an admin
+// Must run after verifyJWT
+export const isAdmin = (req, res, next) => {
+    if (req.user?.role !== "ADMIN") {
+        return res.status(403).json({
+            success: false,
+            message: "Access denied. Admin privileges required.",
+        });
+    }
+    next();
+};
+
