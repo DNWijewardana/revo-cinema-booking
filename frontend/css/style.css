@@ -21,7 +21,10 @@
 
 body{
     width: 100%;
+    min-height: 100vh;
     background: linear-gradient(138deg, rgba(2,0,36,1) 8%, rgba(6,6,87,1) 29%, rgba(25,83,183,1) 64%, rgba(1,1,76,1) 98%);  
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--primary-text);
 }
 
@@ -1154,9 +1157,8 @@ select:focus-visible{
     gap: 1rem;
 }
 
-/* ============================================================
-   AUTH PAGES  (Login / Sign Up)  —  split-screen cinema layout
-   ============================================================ */
+
+/* ===== AUTH PAGES  (Login / Sign Up) ===== */
 
 .auth-wrapper{
     min-height: 100vh;
