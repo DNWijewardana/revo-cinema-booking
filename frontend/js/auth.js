@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:5000/api/v1/auth";
+const API_BASE = "https://revo-cinema-backend.onrender.com/api/v1/auth";
 
 
 // Show / hide password on any field with a .pw-toggle button

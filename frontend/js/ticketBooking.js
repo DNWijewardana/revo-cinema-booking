@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/v1"; // Update this backend URL when deploying to production
+const API_URL = "https://revo-cinema-backend.onrender.com/api/v1";
 const SEAT_PRICE = 800; // LKR per seat
 const TOTAL_SEATS = 80;
 

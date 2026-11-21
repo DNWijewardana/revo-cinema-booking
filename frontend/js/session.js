@@ -1,4 +1,4 @@
-const AUTH_API = "http://localhost:5000/api/v1/auth";
+const AUTH_API = "https://revo-cinema-backend.onrender.com/api/v1/auth";
 
 // Ask the backend who the current user is
 async function getCurrentUser() {

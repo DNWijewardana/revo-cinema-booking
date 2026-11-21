@@ -1,4 +1,4 @@
-const BOOKINGS_API = "http://localhost:5000/api/v1/bookings";
+const BOOKINGS_API = "https://revo-cinema-backend.onrender.com/api/v1/bookings";
 
 // Keep the fetched bookings so the E-Ticket can look them up by id
 const bookingsById = {};
