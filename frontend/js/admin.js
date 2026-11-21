@@ -1,4 +1,4 @@
-const API = "http://localhost:5000/api/v1";
+const API = "https://revo-cinema-backend.onrender.com/api/v1";
 
 // Guard: only admins may see this page
 async function ensureAdmin() {
